@@ -4,7 +4,6 @@ import com.codeit.collection.minilms.domain.Course;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
@@ -19,10 +18,6 @@ public class CourseService {
 
     public List<Course> findAll() {
         return courses;
-    }
-
-    public Optional<Course> findByCode(String code) {
-        return courses.stream().filter(c -> c.getCourseCode().equals(code)).findFirst();
     }
 
     /** 강의 코드 -> 강의 조회표. 다른 서비스가 강의명을 붙일 때 씁니다. */

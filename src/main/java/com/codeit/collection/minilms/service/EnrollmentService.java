@@ -37,12 +37,6 @@ public class EnrollmentService {
                                 ids -> (long) ids.size())));
     }
 
-    /** 학기별 수강 건수 */
-    public Map<String, Long> enrollmentCountBySemester() {
-        return enrollments.stream()
-                .collect(Collectors.groupingBy(Enrollment::getSemester, TreeMap::new, Collectors.counting()));
-    }
-
     /** 강의별 평균 성적 */
     public Map<String, Double> averageScoreByCourse() {
         return enrollments.stream()
