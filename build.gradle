@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.codeit'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    // ./gradlew run 은 11장 종합 실습(MiniLMS)을 실행합니다.
+    // 다른 예제는 IntelliJ에서 각 Main 클래스의 main 메서드를 실행합니다.
+    mainClass = 'com.codeit.collection.minilms.Application'
+}
